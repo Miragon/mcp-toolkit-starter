@@ -1,9 +1,19 @@
 # my-mcp-server: a minimal Miragon MCP Toolkit starter
 
+> [!WARNING]
+> **Archived on 2026-11-06.** This starter builds on
+> `@miragon/mcp-toolkit-core` and `@miragon/mcp-toolkit-ui` 2.x, which are no
+> longer developed. Their 2.x docs stay at
+> [mcp-toolkit v2.9.0](https://github.com/Miragon/mcp-toolkit/tree/v2.9.0/docs).
+> The code stays usable as it is: it installs the published 2.9.0 packages
+> from npm. For typed tool calls from a client, see
+> [mcp-toolkit](https://miragon.github.io/mcp-toolkit/): it now generates them
+> from a server's `tools/list`.
+
 A self-contained MCP server built on the Miragon MCP Toolkit (the published
-`@miragon/mcp-toolkit-*` packages): a plain [mcp-use](https://mcp-use.com)
-project with the toolkit installed on top. One module registers its **own**
-tools plus a widget (the `tasks` module), and the mcp-use CLI builds and
+`@miragon/mcp-toolkit-core` and `@miragon/mcp-toolkit-ui` 2.9.0 packages): a
+plain [mcp-use](https://mcp-use.com) project with the toolkit installed on
+top. One module registers its **own** tools plus a widget (the `tasks` module), and the mcp-use CLI builds and
 serves the views. Two commands take you from clone to a rendered widget.
 
 ## Quickstart
@@ -111,11 +121,6 @@ in the graph splits mcp-use into two peer instances and crashes widgets at
 render time (see the toolkit's migration guide), and your own icons then miss
 the stroke the toolkit sets for its views.
 
-Between toolkit releases the `@miragon` pins here still point at the previous
-release, so `pnpm install` can report an unmet `mcp-use` peer until the next
-release lifts them. It is a warning, not a break — install, typecheck and
-`mcp-use build` all succeed.
-
 ## Look and language
 
 The widgets render in the Miragon design system, the toolkit's default
@@ -155,7 +160,7 @@ Keep every text colour at 4.5:1 on its surface and the focus ring at 3:1, in
 both modes. Override roles only, never the `--cd-*` tokens (the Miragon
 palette the roles default to) and never a component class: your brand then
 needs no toolkit release and survives every update. The
-[white-labeling guide](https://github.com/Miragon/mcp-toolkit/blob/main/docs/guides/white-labeling.md)
+[white-labeling guide](https://github.com/Miragon/mcp-toolkit/blob/v2.9.0/docs/guides/white-labeling.md)
 lists every role (status tones, surfaces, radii, fonts) and the alternative
 in code, `createTheme` + `ThemeProvider`.
 
@@ -183,28 +188,28 @@ them with no token or registry configuration.
 
 ## Where this project comes from
 
-This project is maintained as
-[`templates/minimal-server`](https://github.com/Miragon/mcp-toolkit/tree/main/templates/minimal-server)
-in the `mcp-toolkit` monorepo and auto-mirrored to
-[`Miragon/mcp-toolkit-starter`](https://github.com/Miragon/mcp-toolkit-starter),
-the "Use this template" repo. Nothing in it depends on the monorepo — it
-installs only published packages. If you run it in place inside the monorepo
-checkout, install with `pnpm install --ignore-workspace` (the directory sits
-inside the monorepo's pnpm workspace but is not part of it).
+This project was maintained as
+[`templates/minimal-server`](https://github.com/Miragon/mcp-toolkit/tree/v2.9.0/templates/minimal-server)
+in the `mcp-toolkit` monorepo up to 2.9.0, the last release of
+`@miragon/mcp-toolkit-core` and `@miragon/mcp-toolkit-ui`. The monorepo no
+longer holds it, and this repository gets no further updates. Nothing in it
+depends on the monorepo: it installs only published packages.
 
 ## Where to go next
 
-- [Docs](https://github.com/Miragon/mcp-toolkit/tree/main/docs) — concepts,
+The links below point at mcp-toolkit 2.9.0, the version this project pins.
+
+- [Docs](https://github.com/Miragon/mcp-toolkit/tree/v2.9.0/docs): concepts,
   guides, and the API reference for every package; the
-  [migration guide](https://github.com/Miragon/mcp-toolkit/blob/main/docs/guides/migrating-to-mcp-use-2.md)
+  [migration guide](https://github.com/Miragon/mcp-toolkit/blob/v2.9.0/docs/guides/migrating-to-mcp-use-2.md)
   if you are coming from a 0.10.x scaffold.
-- [The `standalone-host` example](https://github.com/Miragon/mcp-toolkit/tree/main/examples/standalone-host)
-  — the in-repo reference for this exact shape.
-- [The `tasks` example](https://github.com/Miragon/mcp-toolkit/tree/main/examples/modules/tasks)
-  — the full-size version of this module (complete_task, filterable board
+- [The `standalone-host` example](https://github.com/Miragon/mcp-toolkit/tree/v2.9.0/examples/standalone-host):
+  the in-repo reference for this exact shape.
+- [The `tasks` example](https://github.com/Miragon/mcp-toolkit/tree/v2.9.0/examples/modules/tasks):
+  the full-size version of this module (complete_task, filterable board
   widget, in-widget refresh, tests).
-- [Agent skills](https://github.com/Miragon/mcp-toolkit/tree/main/.claude/skills)
-  — the repo's coding-agent skills (`build-mcp-server`, `add-mcp-tool`,
+- [Agent skills](https://github.com/Miragon/mcp-toolkit/tree/v2.9.0/.claude/skills):
+  the repo's coding-agent skills (`build-mcp-server`, `add-mcp-tool`,
   `build-mcp-widget`, `compose-a-view`, `white-label-client`) encode the house
   patterns; copy them into this project's `.claude/skills/` so your coding
   agent builds on them.
